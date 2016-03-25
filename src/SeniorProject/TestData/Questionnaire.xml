@@ -1,0 +1,266 @@
+﻿<Questionnaire>
+  <id value="f201"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <pre>
+        International Prostate Symptom Score
+        Please answer ALL questions as best you can.
+        Over the past month or so , how often have you:
+        1. Had a sensation of not emptying your bladder after urination?
+        2. Had to urinate again less than two hours after a previous urination?
+        3. Found that you stopped, then started again, several times 
+           during urination?
+        4. Had difficulty postponing urination?
+        5. Had a weak urinary stream?
+        6. Had to strain in order to begin urination?
+        7. Typically gotten up at night to urinate?
+        8. If you were to spend the rest of your life with your urinary
+           condition just the way it is now, how would you feel about that?
+      </pre>
+    </div>
+  </text>
+  <status value="published"/>
+  <date value="2007"/>
+  <subjectType value="Patient"/>
+  <group>
+    <title value="International Prostate Symptom Score"/>
+    <text value="Please answer ALL questions as best you can."/>
+    <linkId value="root"/>
+    <required value="true"/>
+    <group>
+      <title value="Over the past month or so, how ofetn have you:"/>
+      <linkId value="1"/>
+      <question>
+        <linkId value="1.1"/>
+        <text value="Had a sensation of not emptying your bladder after urination?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.2"/>
+        <text value="Had to urinate again less than two hours after a 
+              previous urination?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.3"/>
+        <text value="Found that you stopped, then satrted again, several times
+              during urination?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.4"/>
+        <text value="Had difficulty postponing urination?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.5"/>
+        <text value="Had a weak urinary stream?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.6"/>
+        <text value="Had to strain in order to begin urination?"/>
+        <option>
+          <code value="m0"/>
+          <display value="Not at all"/>
+        </option>
+        <option>
+          <code value="m2"/>
+          <display value="Less than 1 time in 5"/>
+        </option>
+        <option>
+          <code value="m3"/>
+          <display value="Less than half the time"/>
+        </option>
+        <option>
+          <code value="m4"/>
+          <display value="About half the time"/>
+        </option>
+        <option>
+          <code value="m5"/>
+          <display value="More than half the time"/>
+        </option>
+        <option>
+          <code value="m6"/>
+          <display value="Almost always"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.7"/>
+        <text value="Typically gotten up at night to urinate?"/>
+        <option>
+          <code value="n0"/>
+          <display value="None"/>
+        </option>
+        <option>
+          <code value="n1"/>
+          <display value="1 Time"/>
+        </option>
+        <option>
+          <code value="n2"/>
+          <display value="2 Times"/>
+        </option>
+        <option>
+          <code value="n3"/>
+          <display value="3 Times"/>
+        </option>
+        <option>
+          <code value="n4"/>
+          <display value="4 Times"/>
+        </option>
+        <option>
+          <code value="n5"/>
+          <display value="5 or more Times"/>
+        </option>
+      </question>
+      <question>
+        <linkId value="1.8"/>
+        <text value="If you were to spend the rest of your life?"/>
+        <option>
+          <code value="o0"/>
+          <display value="Delighted"/>
+        </option>
+        <option>
+          <code value="o1"/>
+          <display value="Pleased"/>
+        </option>
+        <option>
+          <code value="o2"/>
+          <display value="Mostly Satisfied"/>
+        </option>
+        <option>
+          <code value="o3"/>
+          <display value="Mixed (equally satisfied/dissatisfied)"/>
+        </option>
+        <option>
+          <code value="o4"/>
+          <display value="Mostly dissatisfied"/>
+        </option>
+        <option>
+          <code value="o5"/>
+          <display value="Unhappy"/>
+        </option>
+        <option>
+          <code value="o6"/>
+          <display value="Terrible"/>
+        </option>
+      </question>
+    </group>
+  </group>
+</Questionnaire>
