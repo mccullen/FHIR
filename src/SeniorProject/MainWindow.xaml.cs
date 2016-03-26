@@ -69,23 +69,35 @@ namespace SeniorProject
 				"<Window xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n" +
 				"xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n" +
 				"Height=\"400\" Width=\"500\" WindowStartupLocation=\"CenterScreen\">\n" +
-				"<StackPanel>\n";
+				"<ScrollViewer VerticalScrollBarVisibility=\"Auto\"><StackPanel>\n";
 
-			// Get all the groups
-			var descendants = document.Descendants("group");
-			var groups = from g in document.Descendants("group") 
-						 select new
-						 {
-							 text = (string) g.Elements("title").Attributes("value").FirstOrDefault()
-							//text = (string) g.Element("text").Attribute("value") ?? ""//.Element("text") ?? ""
-						 };// g.Element("text").Value;
-			foreach (var group in groups)
+
+			var groups = from groupElement in document.Descendants("group")
+						select groupElement;
+			foreach (var groupElement in groups)
 			{
-				questionnaireXaml += "<TextBox>" + group.text + "</TextBox>";
+				var title = from titleElement in groupElement.Elements("title")
+							select titleElement.Attribute("value").Value;
+				questionnaireXaml += "<TextBox>" + title.ElementAt(0) + "</TextBox>\n";
+
+				var questions = from questionElement in groupElement.Elements("question")
+								select questionElement;
+
+				foreach (var question in questions)
+				{
+					questionnaireXaml += "<TextBox>" + question.Element("text").Attribute("value").Value.ToString() + "</TextBox>\n";
+					var options = from optionElement in question.Elements("option")
+								  select optionElement;
+					foreach (var option in options)
+					{
+						questionnaireXaml += "<TextBlock>" + option.Element("display").Attribute("value").Value.ToString() + "</TextBlock>\n";
+					}
+				
+				}
 			}
 
 			// Add ending to xaml file.
-			questionnaireXaml += "</StackPanel>\n" +
+			questionnaireXaml += "</StackPanel></ScrollViewer>\n" +
 				"</Window>";
 			File.WriteAllText("Questionnaire.xaml", questionnaireXaml);
 

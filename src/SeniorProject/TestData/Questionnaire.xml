@@ -29,7 +29,7 @@
     <linkId value="root"/>
     <required value="true"/>
     <group>
-      <title value="Over the past month or so, how ofetn have you:"/>
+      <title value="Over the past month or so, how often have you:"/>
       <linkId value="1"/>
       <question>
         <linkId value="1.1"/>
