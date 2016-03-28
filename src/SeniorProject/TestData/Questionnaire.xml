@@ -1,4 +1,4 @@
-﻿<Questionnaire>
+﻿<Questionnaire> <!-- xmlns="http://hl7.org/fhir">-->
   <id value="f201"/>
   <text>
     <status value="generated"/>
@@ -9,14 +9,14 @@
         Over the past month or so , how often have you:
         1. Had a sensation of not emptying your bladder after urination?
         2. Had to urinate again less than two hours after a previous urination?
-        3. Found that you stopped, then started again, several times 
-           during urination?
+        3. Found that you stopped, then started again, several times
+        during urination?
         4. Had difficulty postponing urination?
         5. Had a weak urinary stream?
         6. Had to strain in order to begin urination?
         7. Typically gotten up at night to urinate?
         8. If you were to spend the rest of your life with your urinary
-           condition just the way it is now, how would you feel about that?
+        condition just the way it is now, how would you feel about that?
       </pre>
     </div>
   </text>

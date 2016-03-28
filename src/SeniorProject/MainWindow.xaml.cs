@@ -31,6 +31,7 @@ namespace SeniorProject
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		static private XNamespace ns = "http://hl7.org/fhir";
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -74,27 +75,18 @@ namespace SeniorProject
 
 			var groups = from groupElement in document.Descendants("group")
 						select groupElement;
+			int currentGroup = 0;
+			// For each group
 			foreach (var groupElement in groups)
 			{
-				var title = from titleElement in groupElement.Elements("title")
-							select titleElement.Attribute("value").Value;
-				questionnaireXaml += "<TextBox>" + title.ElementAt(0) + "</TextBox>\n";
+				// Output the title
+				questionnaireXaml = OutputTitle(questionnaireXaml, currentGroup, groupElement);
 
-				var questions = from questionElement in groupElement.Elements("question")
-								select questionElement;
-
-				foreach (var question in questions)
-				{
-					questionnaireXaml += "<TextBox>" + question.Element("text").Attribute("value").Value.ToString() + "</TextBox>\n";
-					var options = from optionElement in question.Elements("option")
-								  select optionElement;
-					foreach (var option in options)
-					{
-						questionnaireXaml += "<TextBlock>" + option.Element("display").Attribute("value").Value.ToString() + "</TextBlock>\n";
-					}
-				
-				}
+				// Output questions
+				questionnaireXaml = OutputQuestions(questionnaireXaml, currentGroup, groupElement);
+				++currentGroup;
 			}
+			questionnaireXaml += "<Button HorizontalAlignment=\"Center\">Submit</Button>";
 
 			// Add ending to xaml file.
 			questionnaireXaml += "</StackPanel></ScrollViewer>\n" +
@@ -102,6 +94,12 @@ namespace SeniorProject
 			File.WriteAllText("Questionnaire.xaml", questionnaireXaml);
 
 			// Create and show window using the xaml file.
+			DisplayWindow();
+
+		}
+
+		private static void DisplayWindow()
+		{
 
 			Window myWindow = null;
 			try
@@ -121,7 +119,62 @@ namespace SeniorProject
 			{
 				MessageBox.Show(ex.Message);
 			}
+		}
 
+		private static string OutputQuestions(string questionnaireXaml, int currentGroup, XElement groupElement)
+		{
+			var questions = from questionElement in groupElement.Elements("question")
+							select questionElement;
+
+			int currentQuestion = 0;
+			// For each question
+			foreach (var question in questions)
+			{
+				// Output the title
+				questionnaireXaml += "<TextBlock>" +
+					question.Element("text").Attribute("value").Value.ToString() +
+					"</TextBlock>\n";
+
+				var options = from optionElement in question.Elements("option")
+							  select optionElement;
+				// Output every option for the question
+				for (int currOption = 0; currOption < options.Count(); ++currOption)//foreach (var option in options)
+				{
+					questionnaireXaml += "<RadioButton GroupName=\"" + "group" + currentQuestion.ToString() + "\" ";
+
+					if (currOption == options.Count() - 1)
+					{
+						questionnaireXaml += "MinHeight=\"35\"";
+					}
+					questionnaireXaml += ">" + 
+						options.ElementAt(currOption).Element("display").Attribute("value").Value.ToString() +
+						"</RadioButton>\n";
+				}
+				++currentQuestion;
+
+			}
+			return questionnaireXaml;
+		}
+
+		private static string OutputTitle(string questionnaireXaml, int currentGroup, XElement groupElement)
+		{
+			var title = from titleElement in groupElement.Elements("title")
+						select titleElement.Attribute("value").Value;
+
+			// output the title
+			if (currentGroup == 0)
+			{
+				questionnaireXaml += "<TextBlock HorizontalAlignment=\"Center\" FontSize=\"16\" " +
+					"MinHeight=\"30\" FontWeight=\"Bold\"" +
+					">" +
+					title.ElementAt(0) + "</TextBlock>\n";
+			}
+			else
+			{
+				questionnaireXaml += "<TextBlock FontSize=\"14\" MinHeight=\"20\">" +
+					title.ElementAt(0) + "</TextBlock>\n";
+			}
+			return questionnaireXaml;
 		}
 	}
 }
