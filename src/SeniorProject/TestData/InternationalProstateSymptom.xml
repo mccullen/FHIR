@@ -1,4 +1,4 @@
-﻿<Questionnaire> <!-- xmlns="http://hl7.org/fhir">-->
+﻿<Questionnaire> 
   <id value="f201"/>
   <text>
     <status value="generated"/>
@@ -61,8 +61,7 @@
       </question>
       <question>
         <linkId value="1.2"/>
-        <text value="Had to urinate again less than two hours after a 
-              previous urination?"/>
+        <text value="Had to urinate again less than two hours after a previous urination?"/>
         <option>
           <code value="m0"/>
           <display value="Not at all"/>
@@ -90,8 +89,7 @@
       </question>
       <question>
         <linkId value="1.3"/>
-        <text value="Found that you stopped, then satrted again, several times
-              during urination?"/>
+        <text value="Found that you stopped, then started again, several times during urination?"/>
         <option>
           <code value="m0"/>
           <display value="Not at all"/>

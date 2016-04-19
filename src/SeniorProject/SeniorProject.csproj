@@ -57,7 +57,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Q.cs" />
+    <Compile Include="QuestionnaireWindow.xaml.cs">
+      <DependentUpon>QuestionnaireWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="QuestionnaireWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -106,15 +119,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TestData\Questionnaire.xml">
+    <Resource Include="TestData\InternationalProstateSymptom.xml">
       <SubType>Designer</SubType>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TestData\junk.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TestData\Questionnaire2.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,40 @@
+﻿<Window x:Class="SeniorProject.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FHIR" Height="300" Width="300">
+	<DockPanel LastChildFill="False">
+		<Menu Background="White" DockPanel.Dock="Top" HorizontalAlignment="Left">
+			<MenuItem Header="_File">
+				<MenuItem Header="Add Questionnaire"/>
+				<Separator/>
+				<MenuItem Header="_Exit"/>
+			</MenuItem>
+			<MenuItem Header="_Edit">
+				<MenuItem Header="Edit Questionnaire"/>
+			</MenuItem>
+		</Menu>
+		<Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Click="LoadQuestionnaireButton_Click">Submit</Button>
+		<Grid Margin="5,5,5,5">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0">Select Patient</TextBlock>
+			<TextBox Grid.Row="0" Grid.Column="1" Width="170"></TextBox>
+
+			<TextBlock Grid.Row="1">Select Questionnaire</TextBlock>
+			<!--<TextBox Grid.Row="1" Grid.Column="1" Width="100"></TextBox>-->
+			<ComboBox Name="questionnaireCombobox" Grid.Row="1" Grid.Column="1" Width="170">
+				<ComboBoxItem IsSelected="True">International Prostate Symptom</ComboBoxItem>
+				<ComboBoxItem>Urogenital Distress Inventory</ComboBoxItem>
+				<ComboBoxItem>Incontinence Impact</ComboBoxItem>
+			</ComboBox>
+
+		</Grid>
+	</DockPanel>
+</Window>
